@@ -14,4 +14,6 @@ urlpatterns = [
     path('team_members/', views.team_members, name='team_members'),
     path('', views.main_page, name='main_page'),
     path('login_page', views.login_page, name='login_page'),
+    path('create_product', views.create_prod, name='create_product'),
+    path('<int:pk>', views.ProductsDetailed.as_view(), name='detail_prod'),
 ]

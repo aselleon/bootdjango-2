@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Products
+from .forms import ProductsForm
+from django.views.generic import DetailView
 
 # Create your views here.
 
@@ -23,3 +25,25 @@ def main_page(request):
 
 def login_page(request):
     return render(request, 'shop/login.html', {})
+
+class ProductsDetailed(DetailView):
+    model = Products
+    template_name = 'shop/detailed.html'
+    context_object_name = 'product'
+
+def create_prod(request):
+    error = ''
+    if request.method == "POST":
+        form = ProductsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main_page')
+        else:
+            error = "something gone wrong..."
+    form = ProductsForm()
+
+    data = {
+        'form':form,
+        'error':error
+    }
+    return render(request, 'shop/create.html', data)

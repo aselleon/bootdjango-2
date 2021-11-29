@@ -18,7 +18,7 @@
     {% block maincontent %}
     <nav class="navbar navbar-expand-lg bg-light navbar-light">
         <div class="container">
-            <a href="" class="navbar-logo">
+            <a href="main" class="navbar-logo">
                 <img src="{% static "images/Vector.svg" %}" alt="">
             </a>
             <button class="navbar-toggler" 
@@ -34,12 +34,19 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a href="#bellring" class="nav-link">
-                            <img src="{% static "images/BellRinging.svg" %}" alt="">
+                            {% comment %} <img src="{% static "images/BellRinging.svg" %}" alt=""> {% endcomment %}
+                            <i class="material-icons">add_shopping_cart</i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#shoppingcart" class="nav-link">
-                            <img src="{% static "images/ShoppingCartSimple.svg" %}" alt="">
+                            {% comment %} <img src="{% static "images/ShoppingCartSimple.svg" %}" alt=""> {% endcomment %}
+                            <i class="material-icons">notifications</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="create_product" class="nav-link">
+                            <i class="material-icons">control_point</i>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -60,7 +67,7 @@
                 <form class="flex-column">
                     <input class="form-control me-2" type="text" placeholder="Login" aria-label="Search">
                     <input class="form-control me-2" type="password" placeholder="password" aria-label="Search">
-                    <a class="btn btn-primary" href="main_page" type="submit">Login</a>
+                    <a class="btn btn-success" href="main" type="submit">Login</a>
                     <p>Don't have account yet?</p>
                     <a href="register.html" class="txt">Register now!</a>
                 </form>

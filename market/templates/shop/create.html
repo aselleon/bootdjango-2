@@ -1,0 +1,73 @@
+{% extends 'shop/example.html' %}
+{% load static %}
+
+{% block cssfile %} <link rel="stylesheet" href="{% static 'css/createstyle.css' %}"> {% endblock %}
+{% block title %} Create {% endblock %}
+<!-- <body> -->
+    {% block maincontent %}
+    <nav class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="container">
+            <a href="main" class="navbar-logo">
+                <img src="{% static "images/Vector.svg" %}" alt="">
+            </a>
+            <button class="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="navmenu"
+            aria-expanded="false" 
+            aria-controls="navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#bellring" class="nav-link">
+                            {% comment %} <img src="{% static "images/BellRinging.svg" %}" alt=""> {% endcomment %}
+                            <i class="material-icons">add_shopping_cart</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#shoppingcart" class="nav-link">
+                            {% comment %} <img src="{% static "images/ShoppingCartSimple.svg" %}" alt=""> {% endcomment %}
+                            <i class="material-icons">notifications</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="create_product" class="nav-link">
+                            <i class="material-icons">control_point</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="login_page" role="button">Войти</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-4">
+                <!-- <ul class="navbar-nav flex-column">
+                    <li class="nav-item">
+                        input.
+                    </li>
+                </ul> -->
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.title }}<br>
+                    {% comment %} {{ form.prod_image }}<br> {% endcomment %}
+                    {{ form.prod_decription }}<br>
+                    <span> {{ error }} </span><br>
+                    {% comment %} <input type="text" placeholder="Product name" class="form-control"><br>
+                    <input type="file" placeholder="Product image" class="form-control"><br>
+                    <input type="text" placeholder="Product description" class="form-control"><br> {% endcomment %}
+                    <button class="btn btn-success" type="submit">Add product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+<!-- </body>
+</html> -->

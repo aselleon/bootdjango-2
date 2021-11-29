@@ -2,7 +2,7 @@ body{
     background-color: whitesmoke;
 }
 .btn-primary{
-    background-color: whitesmoke;
+    background-color: black;
     border-color: #17C878;
     color: #17C878;
 }
@@ -33,15 +33,15 @@ body{
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-.btn-primary{
-    margin-left: 7rem;
-    border-color: black;
+/* .btn-primary{
+    margin-left: 2rem;
+    border-color: #17C878;
     color: #17C878;
 }
 .btn-primary:hover{
     background-color: #17C878;
     border-color: #17C878;
-}
+} */
 .flex-column p{
     margin-top: 0.5rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
