@@ -18,7 +18,8 @@ def team_members(request):
 
 def main_page(request):
     catalogue = ({})
-    return render(request, 'shop/index.html', {})
+    prods = Products.objects.all()
+    return render(request, 'shop/index.html', {'products':prods})
 
 def login_page(request):
     return render(request, 'shop/login.html', {})

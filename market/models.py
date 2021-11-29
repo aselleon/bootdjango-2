@@ -5,7 +5,7 @@ from django.db.models.base import ModelState
 
 class Products(models.Model):
     title = models.CharField("name", max_length=60)
-    prod_image = models.ImageField()
+    prod_image = models.ImageField(upload_to = "market/static/images")
     prod_decription = models.TextField()
 
     def __str__(self):
