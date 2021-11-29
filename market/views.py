@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Products
 from .forms import ProductsForm
-from django.views.generic import DetailView
+from django.views.generic import DetailView, UpdateView
 
 # Create your views here.
 
@@ -30,6 +30,12 @@ class ProductsDetailed(DetailView):
     model = Products
     template_name = 'shop/detailed.html'
     context_object_name = 'product'
+
+class ProductsUpdate(UpdateView):
+    model = Products
+    template_name = 'shop/create.html'
+    # fields = ['title', 'prod_decription']
+    form_class = ProductsForm
 
 def create_prod(request):
     error = ''
